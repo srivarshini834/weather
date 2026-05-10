@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkyCast Weather</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #e0eafc; background: linear-gradient(to right, #cfdef3, #e0eafc); height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; }
+        .container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
+        input, select, button { padding: 12px; margin: 10px; border-radius: 8px; border: 1px solid #ddd; outline: none; }
+        button { background: #4facfe; color: white; border: none; cursor: pointer; transition: 0.3s; font-weight: bold; }
+        button:hover { background: #00f2fe; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Search</h1>
+        <form action="/get_weather" method="POST">
+            <input type="text" name="city" placeholder="Enter City Name..." required>
+            <select name="units">
+                <option value="metric">Celsius (°C)</option>
+                <option value="imperial">Fahrenheit (°F)</option>
+            </select>
+            <button type="submit">Check Weather</button>
+        </form>
+    </div>
+</body>
+</html>

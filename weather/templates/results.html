@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather in {{ weather.city }}</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; width: 320px; }
+        .temp { font-size: 56px; font-weight: bold; color: #333; margin: 10px 0; }
+        .details { color: #777; margin-bottom: 20px; }
+        img { width: 100px; }
+        .back-link { text-decoration: none; color: #4facfe; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>{{ weather.city }}</h2>
+        <!-- This draws the icon from the API -->
+        <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon">
+        <div class="temp">{{ weather.temp }}{{ weather.units }}</div>
+        <p class="details">{{ weather.desc }}</p>
+        <p>Humidity: {{ weather.humidity }}% | Wind: {{ weather.wind }} m/s</p>
+        <br>
+        <a href="/" class="back-link">← Search Another City</a>
+    </div>
+</body>
+</html>
